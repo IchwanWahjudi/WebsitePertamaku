@@ -1,0 +1,580 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+	border: none;
+}
+:root {
+	--roboto: "Roboto Condensed", sans-serif;
+	--poppins: "Poppins", sans-serif;
+	--bg: rgba(15, 15, 15, 0.9);
+	--navbar: #464646;
+	--span1: #f78e39;
+	--bbnav: #834c20;
+	--font: #dbdbdb;
+	height: auto;
+	scroll-behavior: smooth;
+}
+body {
+	background-color: var(--bg);
+	color: #fff;
+}
+.navbar {
+	font-family: var(--roboto);
+	display: flex;
+	position: fixed;
+	align-items: center; /*vertical*/
+	justify-content: space-between; /*horizontal*/
+	border-bottom: 0.1rem solid var(--bbnav);
+	padding: 1.3rem 7%;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	background-color: rgba(70, 70, 70, 0.8);
+}
+.navbar-logo {
+	flex-wrap: wrap;
+	color: var(--font);
+	width: 15rem;
+	font-size: 2rem;
+	font-weight: 700;
+	font-style: italic;
+}
+.navbar-logo span {
+	color: var(--span1);
+}
+.navbar-nav a {
+	color: var(--font);
+	display: inline-block;
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+.navbar-nav a:hover {
+	color: var(--span1);
+}
+.navbar-extra a:hover {
+	color: var(--span1);
+	transform: scaleX(1.5);
+	transform: scaleY(1.3);
+	transition: 0.2s linear;
+}
+.navbar-nav a::after {
+	content: "";
+	display: block;
+	border-bottom: 2px solid var(--font);
+	padding-bottom: 0.25em;
+	transform: scaleX(0);
+	transition: 0.2s ease-in-out;
+}
+.navbar-nav a:hover::after {
+	transform: scaleX(0.7);
+}
+.navbar-extra a {
+	color: var(--font);
+	display: inline-block;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+}
+#hamburger-menu {
+	display: none;
+}
+.navbar .navbar-extra a {
+	zoom: 1.3;
+}
+/* =================hero Section================== */
+
+.hero {
+	font-family: var(--poppins);
+	font-size: 400;
+	font-style: italic;
+	display: flex;
+	position: relative;
+	align-items: center;
+	min-height: 100vh;
+	background-image: url(img/hero_img_1680x1220.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+/* Gradasi di bawah hero image */
+.hero:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 40%;
+	bottom: 0;
+	background: linear-gradient(
+		0deg,
+		rgb(39, 39, 39, 1) 10%,
+		rgba(255, 255, 255, 0) 40%
+	);
+}
+.hero .content {
+	padding: 1.2rem 7%;
+	max-width: 45rem;
+}
+.hero .content h1 {
+	font-size: 3.5rem;
+	font-weight: 600;
+	color: #fff;
+	text-shadow: 2px 4px 2px rgba(1, 1, 3, 0.5);
+	line-height: 5rem;
+}
+.hero .content h1 span {
+	color: var(--span1);
+}
+.hero .content p {
+	position: relative;
+	width: 30rem;
+	height: auto;
+	font-size: 1.4em;
+	font-weight: 200;
+	margin-bottom: 1.2rem;
+	text-shadow: 3px 3px 3px rgba(1, 1, 3, 0.5);
+	mix-blend-mode: difference;
+}
+.hero .content .cta {
+	font-weight: 600;
+	font-size: 1.4rem;
+	display: inline-block;
+	color: #fff;
+	padding: 1rem 1.5rem;
+	background-color: var(--bbnav);
+	border-radius: 20px;
+	box-shadow: 2px 2px 3px rgba(1, 1, 3, 0.5);
+}
+/* ----------------------------ABOUT-------------------------- */
+.about {
+	font-family: var(--poppins);
+	padding: 5rem 7% 1.5rem;
+}
+.about h1 {
+	margin-top: 2rem;
+	text-align: center;
+	font-size: 2rem;
+}
+.about .row .content h2,
+.menu .content h2,
+.contact .content h2 {
+	text-align: center;
+	font-weight: 600;
+	font-size: 1.8rem;
+	margin-bottom: 1.4rem;
+}
+.about span {
+	color: var(--span1);
+}
+.about .row {
+	display: flex;
+	margin: 0rem 7%;
+}
+.about .row .about-img {
+	flex-wrap: wrap;
+	flex: 1 1 35rem;
+	margin-top: 1.5rem;
+}
+.about .row .about-img img {
+	width: 100%;
+	border-radius: 2rem;
+	box-shadow: 2px 2px 3px rgba(1, 1, 3, 0.5);
+	object-fit: cover;
+	object-position: center;
+}
+.about .row .content {
+	font-family: var(--poppins);
+	flex: 1 1 25rem;
+	margin-top: 1.5rem;
+	margin-left: 2.5rem;
+}
+.about .row .content h2 {
+	font-weight: 600;
+	font-size: 1.5rem;
+}
+.row .content p,
+.contact .content p,
+.menu .content p {
+	text-indent: 2.5rem;
+	text-align: justify;
+	font-weight: 200;
+	line-height: 1.8rem;
+	font-size: 1.1rem;
+}
+/* ----------------------MENU SCRIPT----------------------- */
+.menu {
+	padding: 5rem 7% 1rem;
+}
+.menu .content {
+	font-family: var(--poppins);
+	width: 30rem;
+	font-weight: 400;
+	font-size: 1.2rem;
+	text-align: justify;
+	margin: auto;
+}
+.menu .content {
+	margin-top: 2rem;
+	text-align: center;
+}
+.menu .content p {
+	text-indent: 0;
+}
+.menu .content h2 {
+	font-size: 2rem;
+}
+.menu .content span {
+	color: var(--span1);
+}
+.menu .row {
+	display: flex;
+	text-align: center;
+	margin: 1rem 7%;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.menu .row img {
+	width: 100%;
+	border-radius: 50%;
+}
+.menu .row .menu-card1,
+.menu-card2,
+.menu-card3 {
+	margin: 1rem 1rem 0.5rem;
+	width: 20rem;
+}
+.menu .row .menu-title-image1,
+.menu-title-image2,
+.menu-title-image3 {
+	margin: 1rem;
+	font-family: var(--poppins);
+}
+.menu .row .menu-title-price1,
+.menu-title-price2,
+.menu-title-price3 {
+	margin: 1rem;
+	font-family: var(--poppins);
+}
+/* ===========Kontak kami================ */
+.contact {
+	font-family: var(--poppins);
+	margin: 0rem 7% 1.5rem;
+}
+.contact .content {
+	margin: 2rem 1rem;
+	margin-bottom: 2rem;
+}
+.contact .content p {
+	width: 35rem;
+	margin: auto;
+	text-align: center;
+	text-indent: 0;
+}
+.contact .content span {
+	color: var(--span1);
+}
+.contact .row {
+	display: flex;
+	/* flex-wrap: wrap; */
+	margin-top: 2rem;
+	background-color: #444;
+}
+.contact .row .map {
+	flex: 1 1 40rem;
+	width: 100%;
+	object-fit: cover;
+}
+.contact .row form {
+	flex: 1 1 40rem;
+	text-align: center;
+	padding: 1rem 1.5rem;
+}
+.contact .row form .input-group {
+	display: flex;
+	align-items: center;
+	margin-top: 2rem;
+	background-color: #111;
+	border: 1px solid #eee;
+	padding-left: 2rem;
+}
+.contact .row form .input-group input {
+	background: none;
+	width: 100%;
+	padding: 1.5rem 1rem;
+	font-size: 1.5rem;
+	color: #fff;
+}
+.contact .row form button {
+	margin-top: 3rem;
+	border: 2px solid #999;
+	display: inline-block;
+	padding: 1rem 3rem;
+	font-size: 1.5rem;
+	color: #fff;
+	background-color: var(--bbnav);
+	cursor: pointer;
+}
+/* ===================FOOTER================= */
+footer .row {
+	font-family: var(--poppins);
+	background-color: #f78e39;
+	text-align: center;
+	line-height: 1.5rem;
+	padding: 1rem 1rem;
+	margin: 1rem 0rem;
+}
+footer .row .socialmedia {
+	margin: 1rem 0rem;
+	justify-content: space-between;
+}
+footer .row .socialmedia a {
+	padding: 1rem;
+	zoom: 1;
+	color: #dbdbdb;
+}
+footer .row .socialmedia a:hover {
+	transition: 1s ease;
+	color: #111;
+	zoom: 1.2;
+}
+footer .row .links {
+	margin: 1rem 2rem;
+	justify-content: space-between;
+}
+footer .row .links a {
+	padding: 0rem 1rem;
+	color: #dbdbdb;
+	font-size: 1rem;
+}
+footer .row .links a:hover {
+	transition: font-size 1s ease;
+	font-size: 1.5rem;
+	color: #111;
+}
+footer .row .credits {
+	font-size: 0.7rem;
+}
+/* Media Queries */
+/*----------------------- notebook/laptop------------------ */
+@media (max-width: 992px) {
+	html {
+		font-size: 80%;
+	}
+	.about .row {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.about .row .about-img {
+		flex: 1 1 20rem;
+	}
+	.about .row .about-img img {
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	.about .row .content {
+		flex: 1 1 20rem;
+	}
+}
+/*---------------------- tablet---------------------------- */
+@media (max-width: 768px) {
+	html {
+		font-size: 75%;
+	}
+	#hamburger-menu {
+		display: inline-block;
+	}
+	.navbar-logo {
+		position: relative;
+		font-size: 2.5rem;
+	}
+	.navbar .navbar-extra a {
+		zoom: 1.3;
+	}
+	.navbar-nav {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		top: 100%;
+		right: -100%;
+		background-color: rgba(131, 76, 32, 0.6);
+		width: auto;
+		height: auto;
+		transition: 0.3s ease-in-out;
+	}
+	.navbar-nav a {
+		position: relative;
+		display: block;
+		justify-content: space-between;
+		font-size: 2rem;
+		padding: 0.5rem 0.75rem;
+		margin: 1rem 4rem;
+	}
+	.navbar-extra {
+		position: relative;
+	}
+	.navbar-nav.active {
+		right: 0%;
+	}
+	.about .row {
+		flex-wrap: wrap;
+	}
+	.about .row .about-img {
+		flex: 1 1 35rem;
+		margin-bottom: 2rem;
+	}
+	.about .row .about-img img {
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	.about .row .content {
+		flex: 1 1 20rem;
+		margin: auto;
+	}
+	.about,
+	.menu,
+	.contact {
+		position: relative;
+	}
+	.menu .content {
+		flex-wrap: wrap;
+	}
+	.contact .row {
+		flex-wrap: wrap;
+	}
+}
+/*------------------- mobile phone------------------------- */
+@media (max-width: 526px) {
+	html {
+		font-size: 60%;
+	}
+	.navbar-nav {
+		width: 150px;
+		height: auto;
+	}
+	.navbar-nav a {
+		position: relative;
+		display: inline-block;
+		justify-content: space-around;
+		font-size: 2rem;
+		padding: 1rem;
+		margin: 1rem 2rem;
+	}
+	.navbar-logo {
+		position: relative;
+		left: 0;
+		right: 0;
+		font-size: 3rem;
+	}
+	.navbar-extra {
+		position: relative;
+	}
+	.hero {
+		display: flex;
+		position: absolute;
+		background-image: url(img/hero-img-ph_960x1536.jpg);
+		min-height: 75%;
+		min-width: 100%;
+	}
+	.about,
+	.menu,
+	.contact {
+		top: 70vh;
+	}
+	.menu .content h2 {
+		padding-top: 4rem;
+	}
+	.about {
+		padding-top: 0rem;
+	}
+	.about h1 {
+		padding-top: 10rem;
+	}
+	.about .row {
+		flex-wrap: wrap;
+	}
+	.about .row .about-img {
+		flex: 1 1 30rem;
+	}
+	.about .row .about-img img {
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	.about .row .content {
+		flex: 1 1 25rem;
+	}
+	footer {
+		position: relative;
+		top: 80vh;
+	}
+}
+/* ------------------------------------------------------ */
+@media (max-width: 350px) {
+	html {
+		font-size: 50%;
+	}
+	.navbar-logo {
+		position: relative;
+		left: 0;
+		right: 0;
+		font-size: 3rem;
+	}
+	.navbar-extra {
+		display: flex;
+		position: relative;
+	}
+	.navbar .navbar-extra a {
+		zoom: 0.8;
+	}
+	.hero {
+		display: flex;
+		min-height: 75%;
+		min-width: 100%;
+	}
+	.about a {
+		margin-top: 2rem;
+	}
+	.about .row {
+		flex-wrap: wrap;
+	}
+	.about .row .about-img {
+		flex: 1 1 25rem;
+	}
+	.about .row .about-img img {
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	.about .row .content {
+		flex: 1 1 20rem;
+	}
+	.menu {
+		font-family: var(--poppins);
+		position: relative;
+		top: 120rem;
+	}
+	.menu .content {
+		width: 25rem;
+		font-weight: 400;
+		font-size: 1rem;
+		text-align: justify;
+		margin: auto;
+		padding: 5rem 7% 1rem;
+	}
+	.contact .content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.about,
+	.menu,
+	.contact {
+		position: relative;
+		top: 75vh;
+	}
+}
